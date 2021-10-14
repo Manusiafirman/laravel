@@ -45,3 +45,27 @@ Route::get('page/{page?}', function ($hal = 2){
 Route::get('user/{name?}', function ($nama = "Hello Word"){
     return "<b> $nama </b>";
 });
+
+Route::get('pesan/{makanan?}/{minuman?}/{cemilan?}', function ($makanan = null,$minuman = null,$cemilan = null) {
+    if ($makanan == null && $minuman == null && $cemilan == null) {
+        $sa = "Anda Tidak Pesan, Silahkan Pulang";
+    }
+            if ($makanan != null ) {
+            $sa = "Pesanan <br>"
+            . "Makanan : $makanan <br>";
+        }
+        if ($makanan != null && $minuman != null ) {
+            $sa = "Pesanan <br>"
+            . "Makanan : $makanan <br>"
+            . "Minuman : $minuman <br>";
+        }
+
+        if ($makanan != null && $minuman != null && $cemilan != null) {
+            $sa = "Pesanan <br>"
+            . "Makanan : $makanan <br>"
+            . "Minuman : $minuman <br>"
+            . "Cemilan : $cemilan";
+}
+
+    return "$sa";
+});
