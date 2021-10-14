@@ -11,7 +11,8 @@
     <hr />
 
     <header style="text-align: center;">
-        <h1>Yayasan Assalaam Bandung</h1>
+        <img src="assalaam.png" width="200" height="200" />
+        <h1>YAYASAN SMK ASSALAAM BANDUNG</h1>
 
     </header>
 
