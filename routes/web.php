@@ -69,3 +69,63 @@ Route::get('pesan/{makanan?}/{minuman?}/{cemilan?}', function ($makanan = null,$
 
     return "$sa";
 });
+
+
+Route::get('profile', function() {
+    $nama = "abdul";
+    return view('profile', compact('nama'));
+});
+
+Route::get('biodata', function() {
+    $nama = "Firman Romansyah";
+    $umur = "17 Tahun";
+    $alamat = "Kp.Cilebak";
+    $sekolah = "SMK ASSALAAM";
+    $kelas = "XII RPL 2";
+    $hobi = "Bermain game, nonton";
+    return view('biodata', compact('nama', 'umur', 'alamat', 'sekolah', 'kelas', 'hobi'));
+});
+
+
+route::get('blog', function () {
+    $posts = [
+        ['id' => 1, 'title' => 'Loren Ipsun 1', 'content' => 'Content Pertama'],
+        ['id' => 2, 'title' => 'Loren Ipsun 2', 'content' => 'Content Kedua'],
+        ['id' => 3, 'title' => 'Loren Ipsun 3', 'content' => 'Content Ketiga'],
+    ];
+
+    return view('blog', compact('posts'));
+});
+
+route::get('data', function() {
+    $post = [
+        ['id' => 1, 'nama' => 'Firman Romansyah', 'username' => 'Demon', 'email' => 'fromansyah206@gmail.com', 'alamat' => 'Bandung', 'mapel' => [
+            'mapel1' => 'Bahasa Indonesia',
+            'mapel2' => 'Bahasa Inggris',
+            'mapel3' => 'Bahasa Indonesia',
+        ] ],
+        ['id' => 2, 'nama' => 'Firman Romansyah', 'username' => 'Demon', 'email' => 'fromansyah206@gmail.com', 'alamat' => 'Bandung', 'mapel' => [
+            'mapel1' => 'Bahasa Indonesia',
+            'mapel2' => 'Bahasa Inggris',
+            'mapel3' => 'Bahasa Indonesia',
+        ] ],
+        ['id' => 3, 'nama' => 'Firman Romansyah', 'username' => 'Demon', 'email' => 'fromansyah206@gmail.com', 'alamat' => 'Bandung', 'mapel' => [
+            'mapel1' => 'Bahasa Indonesia',
+            'mapel2' => 'Bahasa Inggris',
+            'mapel3' => 'Bahasa Indonesia',
+        ] ],
+        ['id' => 4, 'nama' => 'Firman Romansyah', 'username' => 'Demon', 'email' => 'fromansyah206@gmail.com', 'alamat' => 'Bandung', 'mapel' => [
+            'mapel1' => 'Bahasa Indonesia',
+            'mapel2' => 'Bahasa Inggris',
+            'mapel3' => 'Bahasa Indonesia',
+        ] ],
+        ['id' => 5, 'nama' => 'Firman Romansyah', 'username' => 'Demon', 'email' => 'fromansyah206@gmail.com', 'alamat' => 'Bandung', 'mapel' => [
+            'mapel1' => 'Bahasa Indonesia',
+            'mapel2' => 'Bahasa Inggris',
+            'mapel3' => 'Bahasa Indonesia',
+        ] ]
+
+    ];
+
+   return view('data', compact('post'));
+});
