@@ -129,3 +129,20 @@ route::get('data', function() {
 
    return view('data', compact('post'));
 });
+
+
+Route::get('/testmodel', function() {
+$query = App\Models\biodatas::all();
+return $query;
+});
+
+Route::get('/modelpost', function() {
+$query = App\Models\post::all();
+return view ('test-post', compact('query'));
+});
+
+
+Route::get('/modelbioadatas', function() {
+$query = App\Models\biodatas::all();
+return view ('bioadatas', compact('query'));
+});
